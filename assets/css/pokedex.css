@@ -160,9 +160,9 @@
         justify-content: space-around;
     }
     .pokemon .detail .types .type {
-        padding: .5rem 2rem;
+        padding: .10rem 3rem;
         margin: .25rem 0;
-        font-size: .7rem;
+        font-size: .8rem;
     }
     .pokemon .detail img {
         height: 90px;
