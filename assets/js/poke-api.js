@@ -30,4 +30,3 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
     
 }
 
-console.log(pokeApi.getPokemons(offset = 0, limit = 5) )

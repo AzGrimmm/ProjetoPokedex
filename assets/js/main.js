@@ -13,7 +13,7 @@ function loadPokemonItems(offset, limit) {
 
     function convertPokemonToLi(pokemon) {
         return `
-        <li class="pokemon ${pokemon.type}" onclick="openDetail()">
+        <li id="${pokemon.number}" class="pokemon ${pokemon.type}" onclick="openDetail()">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
             <div class="detail">
@@ -43,16 +43,22 @@ loadPokemonItems(offset, limit)
 function loadPokemonDetails(offset, limit) {
 
     function convertPokemon(pokemon) {
+
+          
+        
+        
+        
+    
         return `
                 <div class="basic-detail">
                     <span>Name</span>
-                    <span>number</span>
+                    <span>${pokemon.number}</span>
                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
 
                 </div>
                 <div class="details-window">
                     <h1>Detalhes do Pokémon</h1>
-                    <p><strong>Espécie:</strong> ${pokemon.species}</p>
+                    <p><strong>Espécie:</strong> ${pokemon.number}</p>
                     <p><strong>Altura:</strong> ${pokemon.height}</p>
                     <p><strong>Peso:</strong> ${pokemon.weight}</p>
                     <p><strong>Habilidades:</strong> ${pokemon.abilities}</p>
@@ -64,20 +70,22 @@ function loadPokemonDetails(offset, limit) {
                 </div>
     `
     }
-
-    console.log(pokemonList)
-
     pokeApi.getPokemons(offset, limit)
         .then((pokemons = []) => {
-            widowDetail.innerHTML += pokemons
+            widowDetail.innerHTML = pokemons
                 .map(convertPokemon)
-                .join('')
+                
         })
 
 }
 
+loadPokemonDetails(5, 1)
 
-loadPokemonDetails(offset, limit)
+
+
+
+
+
 
 loadMoreButton.addEventListener('click', () => {
     offset += limit
@@ -103,12 +111,12 @@ const backGround = document.getElementById('backGround')
 
 function openDetail(){
     backGround.classList.add('bgDisplay')
+    console.log(id)
 }
 
 function closeDetail(){
     backGround.classList.remove('bgDisplay')
 }
 
-let li = document.getElementsByClassName('pokemon')
 
-console.log(li)
+
