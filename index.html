@@ -19,12 +19,36 @@
 
     <!-- Nosso CSS -->
     <link rel="stylesheet" href="/assets/css/pokedex.css">
+    <link rel="stylesheet" href="assets/css/detail-pokemon.css">
     <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 
 <body>
     <section class="content">
         <h1>Pokedex</h1>
+        <div id="backGround" class="bg">
+            <div id="windowDetail" class="window-detail">
+                <div class="closeBtn" onclick="closeDetail()">x</div>
+                <div class="basic-detail">
+                    <span>Name</span>
+                    <span>number</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="">
+
+                </div>
+                <div class="details-window">
+                    <h1>Detalhes do Pokémon</h1>
+                    <p><strong>Espécie:</strong> ${pokemon.species}</p>
+                    <p><strong>Altura:</strong> ${pokemon.height}</p>
+                    <p><strong>Peso:</strong> ${pokemon.weight}</p>
+                    <p><strong>Habilidades:</strong> ${pokemon.abilities.join(', ')}</p>
+                    <p><strong>HP:</strong> ${pokemon.hp}</p>
+                    <p><strong>Ataque:</strong> ${pokemon.attack}</p>
+                    <p><strong>Defesa:</strong> ${pokemon.defense}</p>
+                    <p><strong>Velocidade:</strong> ${pokemon.speed}</p>
+                    <p><strong>Total:</strong> ${pokemon.total}</p>
+                </div>
+            </div>
+        </div>
         <ol id="pokemonList" class="pokemons">
             <!--Pokemons Aqui-->
         </ol>
@@ -36,6 +60,7 @@
     <!-- Nosso JS -->
     <script src="/assets/js/pokemon-model.js"></script>
     <script src="/assets/js/poke-api.js"></script>
+    <script src="assets/js/detail-pokemon.js"></script>
     <script src="/assets/js/main.js"></script>
 </body>
 
