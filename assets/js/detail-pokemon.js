@@ -13,6 +13,4 @@ async function getDetailPokemon() {
 
 (async () => {
     const detailPokemon = await getDetailPokemon()
-    console.log(detailPokemon)
 })()
-

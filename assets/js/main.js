@@ -13,7 +13,7 @@ function loadPokemonItems(offset, limit) {
 
     function convertPokemonToLi(pokemon) {
         return `
-        <li id="${pokemon.number}" class="pokemon ${pokemon.type}" onclick="openDetail()">
+        <li id="${pokemon.number}" class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
             <div class="detail">
@@ -38,18 +38,16 @@ function loadPokemonItems(offset, limit) {
 }
 
 
+
 loadPokemonItems(offset, limit)
 
 function loadPokemonDetails(offset, limit) {
 
     function convertPokemon(pokemon) {
 
-          
         
-        
-        
-    
         return `
+                <div class="closeBtn" onclick="closeDetail()">x</div>
                 <div class="basic-detail">
                     <span>Name</span>
                     <span>${pokemon.number}</span>
@@ -76,6 +74,7 @@ function loadPokemonDetails(offset, limit) {
                 .map(convertPokemon)
                 
         })
+        
 
 }
 
@@ -108,15 +107,11 @@ loadMoreButton.addEventListener('click', () => {
 
 const backGround = document.getElementById('backGround')
 
-
-function openDetail(){
+/*function openDetail(){
     backGround.classList.add('bgDisplay')
-    console.log(id)
-}
+}*/
 
 function closeDetail(){
     backGround.classList.remove('bgDisplay')
 }
-
-
 
